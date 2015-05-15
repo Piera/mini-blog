@@ -2,7 +2,7 @@
 
 require 'sinatra'
 require 'sinatra/activerecord'
-require 'environments'
+require './environments'
 require 'sinatra/flash'
 require 'sinatra/redirect_with_flash'
 require 'rack/utils'
