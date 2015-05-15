@@ -43,9 +43,9 @@ end
 post "/posts" do
  @post = Post.new(params[:post])
  if @post.save
-   redirect "posts/#{@post.id}", :notice => 'Congrats! Love the new post. (This message will disapear in 4 seconds.)'
+   redirect "posts/#{@post.id}", :notice => 'Congrats! Love the new post.'
  else
-   redirect "posts/create", :error => 'Something went wrong. Try again. (This message will disapear in 4 seconds.)'
+   redirect "posts/create", :error => 'Something went wrong. Try again.'
  end
 end
 
