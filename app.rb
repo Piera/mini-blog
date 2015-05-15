@@ -5,9 +5,9 @@ require 'sinatra/activerecord'
 require 'environments'
 require 'sinatra/flash'
 require 'sinatra/redirect_with_flash'
+require 'rack/utils'
 
 enable :sessions
-
 
 class Post < ActiveRecord::Base
  validates :title, presence: true, length: { minimum: 5 }
@@ -15,6 +15,9 @@ class Post < ActiveRecord::Base
 end
 
 helpers do
+  def h(text)
+    Rack::Utils.escape_html(text)
+  end
   def title
     if @title
       "#{@title}"
